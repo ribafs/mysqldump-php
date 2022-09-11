@@ -70,7 +70,7 @@ use Ifsnop\Mysqldump as IMysqldump;
 
 try {
     $dump = new IMysqldump\Mysqldump('mysql:host=localhost;dbname=testdb', 'username', 'password');
-    $dump->start('storage/work/dump.sql');
+    $dump->start('backup_'.date('Y-m-d_H:i:s').'.sql');
 } catch (\Exception $e) {
     echo 'mysqldump-php error: ' . $e->getMessage();
 }
